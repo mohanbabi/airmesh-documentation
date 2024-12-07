@@ -1,152 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airmesh User Documentation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2, h3 {
-            color: #0047ab;
-        }
-        h1 {
-            font-size: 2em;
-            margin-bottom: 0.5em;
-        }
-        h2 {
-            font-size: 1.5em;
-            margin-top: 1em;
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 0.2em;
-        }
-        p, li {
-            font-size: 1em;
-            margin-bottom: 0.5em;
-        }
-        .section {
-            margin-top: 1.5em;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .footer {
-            text-align: center;
-            margin-top: 2em;
-            font-size: 0.9em;
-            color: #666;
-        }
-        .note {
-            font-style: italic;
-            color: #555;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/index.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Airmesh Documentation</h1>
-        <p>Airmesh enables drone control over cellular networks and the internet. This guide outlines how to set up Airmesh, configure the VPN with Tailscale, and establish connections for flight and ground control stations.</p>
-
-        <div class="section">
-            <h2>Prerequisites</h2>
-            <p><strong>Tailscale Account:</strong> Register on Tailscale from your PC or laptop, obtain an authorization (pre-auth) key, and save it securely.</p>
-            <span class="note">Note: The auth key is shown only once, so store it safely.</span>
+    <header class="main-header">
+        <div class="logo">
+           <h1> <a href="https://docs.aviavin.com/" class="logo">Airmesh Documentation</a></h1>
         </div>
-
-        <div class="section">
-            <h2>Initial Airmesh Setup</h2>
-            <h3>Step 1: Physical Setup</h3>
+        <nav class="top-nav">
             <ul>
-                <li>Follow the circuit diagram to connect the components.</li>
-                <img src="/image/connection diagram1.png" alt="Circuit diagram" >
-                <li>Turn on your laptop/PC and power up the circuit with a 5-volt power supply through the servo cable.</li>
+                <li><a href="https://docs.aviavin.com/">Home</a></li>
+                <!-- <li><a href="#">Downloads</a></li>
+                <li><a href="#">Community</a></li> -->
+                <li><a href="https://aviavin.com/contact-us/">Support</a></li>
             </ul>
-
-            <h3>Step 2: Connect to Airmesh Network</h3>
+        </nav>
+    </header>
+    <div class="main-content">
+        <nav class="sidebar">
+            <!-- <h2>Documentation</h2> -->
             <ul>
-                <li>Wait for the Airmesh Wi-Fi hotspot to appear.</li>
-                <li>Connect to the Airmesh network.</li>
+                <li><a href="#before-setup">Before Airmesh First Setup</a></li>
+                <li><a href="#first-setup">First Setup Airmesh</a></li>
+                <li><a href="#flight-control">Flight Control Setting</a></li>
+                <li><a href="#ground-control">Ground Control Stations</a></li>
             </ul>
+        </nav>
+        <div class="content-area">
+            <!-- Before Airmesh First Setup -->
+            <section id="before-setup">
+                <h2>Before Airmesh First Setup</h2>
+                <p>Before starting the Airmesh setup, ensure the following:</p>
+                <ol>
+                    <li>On your PC/laptop, register on Tailscale and obtain an authorization key.</li>
+                    <li>Save the key securely in a notepad or a known location, as the auth key will not be shown again.
+                    </li>
+                </ol>
+                <p><strong>Note:</strong> The authorization key will be required during the activation step.</p>
+            </section>
 
-            <h3>Step 3: Access Tailscale Interface</h3>
-            <ul>
-                <li>Open a web browser and go to <a href="http://10.0.2.100:5500">http://10.0.2.100:5500</a>.</li>
-                <li>You will see the Tailscale User Interface (UI).</li>
-            </ul>
-        </div>
+            <!-- First Setup Airmesh -->
+            <section id="first-setup">
+                <h2>First Setup Airmesh</h2>
+                <ol>
+                    <li>Follow the connection diagram to connect the components.</li>
+                    <li>Turn on your laptop/PC.</li>
+                    <li>Power up the circuit using a 5-volt power supply through the servo cable.</li>
+                    <li>Wait for the Airmesh Wi-Fi hotspot/access point to appear.</li>
+                    <li>Once the Airmesh Wi-Fi is available, connect to the network.</li>
+                    <li>Open a browser and type <a href="http://10.0.2.100:5500">http://10.0.2.100:5500</a>, then press
+                        Enter.</li>
+                    <li>You will now see the Tailscale User Interface (UI).</li>
+                    <li>Click the <strong>"Connect to Tailscale"</strong> button in the UI.</li>
+                    <li>When prompted, enter your saved pre-auth key in the <strong>"Enter your pre-Auth Key"</strong>
+                        input box.</li>
+                    <li>Click the button below the input box to proceed.</li>
+                    <li>Once successful, you will see a success message.</li>
+                    <li>Go to the Tailscale admin window to verify if the new device has been added.</li>
+                    <li>If added, the device can now directly communicate with other devices in the Tailscale network.
+                    </li>
+                </ol>
+                <p><strong>Note:</strong> If you encounter any issues during the VPN setup, please <a
+                        href="https://aviavin.com/contact-us/" class="contact-us">contact us.</a></p>
+                <p>A video reference for all the above steps is available. Please refer to it for further assistance.
+                </p>
+            </section>
 
-        <div class="section">
-            <h2>VPN Configuration with Tailscale</h2>
-            <h3>Step 1: Connect to Tailscale</h3>
-            <ul>
-                <li>Click the <strong>"Connect to Tailscale"</strong> button in the Tailscale UI.</li>
-                <li>When prompted, enter your saved pre-auth key in the <strong>"Enter your pre-Auth Key"</strong> box.</li>
-                <li>Click the activation button below the input box.</li>
-            </ul>
+            <!-- Flight Control Setting -->
+            <section id="flight-control">
+                <h2>Flight Control Setting</h2>
+                <ol>
+                    <li>Connect to the Airmesh Wi-Fi network.</li>
+                    <li>Open a browser and navigate to <a href="http://10.0.2.100:3000">http://10.0.2.100:3000</a>.</li>
+                    <li>Click on the <strong>"Flight Controllers"</strong> option on the left side of the page.</li>
+                    <li>The Flight Controller setting page will open.</li>
+                    <li>Follow the video reference provided to complete the setup.</li>
+                </ol>
+            </section>
 
-            <h3>Step 2: Verify VPN Connection</h3>
-            <ul>
-                <li>Check for a success message confirming the connection.</li>
-                <li>In Tailscale Admin, confirm that the new device has been added. It is now connected to the Tailscale VPN and can communicate with other devices on the network.</li>
-            </ul>
-
-            <p class="note"> Note: If you experience issues during VPN setup, please contact our support team.</p>
-
-            <h3>Step 3: VPN Setup Reference Video</h3>
-            <p>A full walkthrough is available in our reference video for visual guidance.</p>
-        </div>
-
-        <div class="section">
-            <h2>Flight Control Configuration</h2>
-            <h3>Step 1: Connect to Airmesh Wi-Fi</h3>
-            <ul>
-                <li>Ensure your device is connected to the Airmesh Wi-Fi network.</li>
-            </ul>
-
-            <h3>Step 2: Access Flight Control Interface</h3>
-            <ul>
-                <li>In your browser, navigate to <a href="http://10.0.2.100:3000">http://10.0.2.100:3000</a>.</li>
-            </ul>
-
-            <h3>Step 3: Configure Flight Controller</h3>
-            <ul>
-                <li>Click <strong>"Flight Controllers"</strong> on the left side of the page.</li>
-                <li>Follow the video reference instructions to complete the setup.</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Ground Control Station Setup</h2>
-            <h3>Step 1: Join Tailscale Network</h3>
-            <ul>
-                <li>Ensure that your Ground Control Station PC or mobile device is connected to the Tailscale network.</li>
-            </ul>
-
-            <h3>Step 2: Control Drone using Internet Service</h3>
-            <ul>
-                <li>Follow the video reference provided for controlling the drone over the cellular network.</li>
-            </ul>
-
-            <p class="note"> Note:: If you experience issues, please contact support for assistance.</p>
-        </div>
-
-        <div class="footer">
-            <p>For support, troubleshooting, or more information, please contact us.</p>
+            <!-- Ground Control Stations -->
+            <section id="ground-control">
+                <h2>Ground Control Stations</h2>
+                <ol>
+                    <li>Ensure your Ground Control Station PC or mobile device is connected to the Tailscale network.
+                    </li>
+                    <li>Follow the video reference to control the drone using the cellular service.</li>
+                    <li>If you encounter any issues, please <a href="https://aviavin.com/contact-us/"
+                            class="contact-us">contact us.</a></li>
+                </ol>
+            </section>
         </div>
     </div>
+    <footer class="main-footer">
+        <p>&copy; 2024 Airmesh. All rights reserved. For support, <a href="https://aviavin.com/contact-us/">contact
+                us.</a></p>
+    </footer>
+    <script src="./js/index.js"></script>
 </body>
+
 </html>

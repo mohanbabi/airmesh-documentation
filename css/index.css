@@ -1,0 +1,201 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: var(--bg-color, white);
+    /* Dynamic background color */
+    color: var(--text-color, black);
+    /* Dynamic text color */
+    transition: background-color 0.5s ease, color 0.5s ease;
+    /* Smooth transition for theme change */
+    touch-action: manipulation;
+        /* Prevent double-tap zoom */
+}
+
+/* Root Variables (Light Theme) */
+:root {
+    --bg-color: white;
+    /* Light theme background */
+    --text-color: black;
+    /* Light theme text */
+    --header-bg: black;
+    /* Header background for light theme */
+    --header-text: white;
+    /* Header text for light theme */
+    --sidebar-bg: #f0f0f0;
+    /* Sidebar background for light theme */
+    --sidebar-text: black;
+    /* Sidebar text for light theme */
+    --link-color: black;
+    /* Sidebar link color for light theme */
+    --link-hover-color: gray;
+    /* Sidebar link hover color for light theme */
+    --footer-bg: black;
+    /* Footer background for light theme */
+    --footer-text: white;
+    /* Footer text for light theme */
+}
+
+/* Dark Theme Variables */
+.dark-theme {
+    --bg-color: black;
+    /* Dark theme background */
+    --text-color: white;
+    /* Dark theme text */
+    --header-bg: black;
+    /* Header background for dark theme */
+    --header-text:  white;
+    /* Header text for dark theme */
+    --sidebar-bg: #333;
+    /* Sidebar background for dark theme */
+    --sidebar-text: white;
+    /* Sidebar text for dark theme */
+    --link-color: lightgray;
+    /* Sidebar link color for dark theme */
+    --link-hover-color: white;
+    /* Sidebar link hover color for dark theme */
+    --footer-bg: #333;
+    /* Footer background for dark theme */
+    --footer-text: lightgray;
+    /* Footer text for dark theme */
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+    /* Dynamic header background */
+    color: var(--header-text);
+    /* Dynamic header text */
+    padding: 10px 20px;
+}
+
+.main-header .logo h1 a  {
+    margin: 0;
+    font-size: 0.8em;
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+/* Top Navigation */
+.top-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav ul li {
+    margin: 0 10px;
+}
+
+.top-nav ul li a {
+    color: var(--header-text);
+    /* Dynamic header link color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 20%;
+    background-color: var(--sidebar-bg);
+    /* Dynamic sidebar background */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    color: var(--sidebar-text);
+    /* Dynamic sidebar text */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: var(--link-color);
+    /* Dynamic link color */
+    font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+    color: var(--link-hover-color);
+    /* Dynamic link hover color */
+}
+
+/* Content Area */
+.content-area {
+    width: 80%;
+    padding: 20px;
+    background-color: var(--bg-color);
+    /* Dynamic content area background */
+    color: var(--text-color);
+    /* Dynamic content text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-area h2 {
+    color: var(--link-color);
+    /* Dynamic content header color */
+    border-bottom: 2px solid #ddd;
+    /* Light gray underline */
+    padding-bottom: 0.2em;
+    margin-bottom: 1em;
+}
+
+/* Footer */
+footer.main-footer {
+    text-align: center;
+    background-color: var(--footer-bg);
+    /* Dynamic footer background */
+    color: var(--footer-text);
+    /* Dynamic footer text */
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+footer a {
+    color: var(--footer-text);
+    /* Dynamic footer link color */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: var(--link-hover-color);
+    /* Dynamic footer link hover color */
+    text-decoration: underline;
+}
+
+/* Contact Us Links */
+.contact-us {
+    color: var(--text-color);
+    /* Dynamic contact link color */
+    text-decoration: none;
+}
+
+.contact-us:hover {
+    text-decoration: underline;
+    color: var(--link-hover-color);
+    /* Dynamic contact hover color */
+}
